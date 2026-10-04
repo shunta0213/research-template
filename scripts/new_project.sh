@@ -114,7 +114,7 @@ mkdir -p "$DEST"
 rsync -a \
   --exclude .git --exclude .venv --exclude __pycache__ --exclude .DS_Store \
   --exclude .pytest_cache --exclude .ruff_cache --exclude htmlcov --exclude .coverage \
-  --exclude .secrets --exclude /.dvc/config.local --exclude /.dvc/cache --exclude /.dvc/tmp \
+  --exclude .secrets --exclude /.dvc/config.local --exclude /.claude/settings.local.json --exclude /.dvc/cache --exclude /.dvc/tmp \
   --include /data/README.md --exclude '/data/*' \
   --include /cache/.gitkeep --exclude '/cache/*' \
   --include /tmp/.gitkeep --exclude '/tmp/*' \

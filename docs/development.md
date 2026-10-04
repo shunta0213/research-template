@@ -2,6 +2,8 @@
 
 ## プロジェクト構成
 
+フォルダ全体の一覧は README の「フォルダ構成」。ここではコードとデータの対応を示す。
+
 ```
 src/                        共通ロジック（editable install され，どこからでも `from src... import` できる）
   runs.py                   パラメータ ⇄ run ディレクトリ（hash）の対応，input/output の保存・読み込み
@@ -130,7 +132,7 @@ dvc push archive/data-20261004.dvc                       # Google Drive へ送�
 scripts/restore_data.sh data-20261004 [runs ...]         # 無ければ dvc pull して data/ に展開
 ```
 
-DVC と Google Drive（API 経由）の初期設定は `docs/setup.md` を参照。
+スクリプトの詳細は `scripts/README.md`，DVC と Google Drive（API 経由）の初期設定は `docs/setup.md`「4」を参照。
 
 ## 新しい実験を追加する
 
@@ -142,6 +144,22 @@ DVC と Google Drive（API 経由）の初期設定は `docs/setup.md` を参照
      （cjob の `CJOB` の決め方は `docs/setup.md`「3.2」）
 3. `docs/experiments-io.md` にパラメータと保存キーを追記する
 4. `analysis/<name>/` にノートブックを作る（`load_runs_cached(RUNS_ROOT / "<name>", load_run, ...)`）
+
+## 記録を残す
+
+結果を後から再現・説明できるよう，次のタイミングでドキュメントを更新する。
+
+| したこと | 更新するもの |
+|---|---|
+| 実験を追加した・パラメータや保存キーを変えた | `docs/experiments-io.md` の該当する節 |
+| 方式・データ形式・ハッシュ対象などを決めた・変えた（`-v2` にした，コードを `archive/` に移した，など） | `docs/decisions.md` の先頭に追記（消さずに残す） |
+| 実験を回した・結果を見て考えた | `notes/YYYY-MM-DD.md`（`notes/TEMPLATE.md` から） |
+| 論文に使う図を作った | `notes/` に図のパスと作ったノートブック |
+| `src/` にモジュールを足した | `tests/unit/` の同じ階層にテスト |
+| スクリプトのオプションを変えた | `scripts/README.md` |
+| 外部データを `data/inputs/` に置いた | 入手元・日付・ライセンスを `notes/` か `data/inputs/` の README |
+
+ノートや論文の数値は書き写さず，図のパスや run の hash（`data/runs/<name>/<hash>/`）で参照する。
 
 ## テスト・カバレッジ
 

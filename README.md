@@ -114,6 +114,7 @@ cjob では複数のコマンド（pueue なら複数のタスクになるもの
 | [scripts/README.md](scripts/README.md)           | スクリプトの使い方（DVC の設定・データのアーカイブと復元）                    |
 | [docs/experiments-io.md](docs/experiments-io.md) | 各実験のパラメータと保存データのキー                                 |
 | [docs/decisions.md](docs/decisions.md)           | 設計判断ログ                                             |
+| [AGENTS.md](AGENTS.md)・[CLAUDE.md](CLAUDE.md)     | AI エージェント（Claude Code・Codex など）への指示。`.claude/` に Claude Code の設定とスキル |
 
 ## フォルダ構成
 
@@ -132,6 +133,7 @@ cjob では複数のコマンド（pueue なら複数のタスクになるもの
 | `data/`        | 実験結果（`runs/<実験名>/<hash>/`）、外部入力（`inputs/`）、cjob のタスクファイル（`tasks/`）         | ×   |
 | `cache/`       | 集計結果のキャッシュ（消しても `data/` から再生成できる）                                          | ×   |
 | `tmp/`         | 使い捨ての作業用ノートブックなど                                                           | ×   |
+| `.claude/`     | Claude Code の共有設定（`settings.json`）とスキル（`skills/`）。指示本体は `AGENTS.md`                | ○   |
 | `.secrets/`    | 秘密情報（DVC 用の Google Drive の鍵。`scripts/setup_dvc.sh` が置く）                    | ×   |
 
 ## データの流れ

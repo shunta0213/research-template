@@ -33,4 +33,7 @@ archive/data-*/
 # 論文 PDF（著作権のため共有しない。書誌情報は refs/references.bib で管理）
 refs/**/*.pdf
 
+# Claude Code の個人設定（共有する設定は .claude/settings.json）
+.claude/settings.local.json
+
 .DS_Store

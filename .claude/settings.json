@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(uv sync)",
+      "Bash(uv run pytest:*)",
+      "Bash(uv run ruff:*)",
+      "Bash(cjob list:*)",
+      "Bash(cjob status:*)",
+      "Bash(cjob logs:*)",
+      "Bash(cjob usage:*)",
+      "Bash(pueue status:*)"
+    ],
+    "ask": [
+      "Bash(git push:*)",
+      "Bash(gh repo create:*)",
+      "Bash(dvc push:*)",
+      "Bash(dvc pull:*)",
+      "Bash(cjob sweep:*)",
+      "Bash(cjob add:*)",
+      "Bash(cjob cancel:*)",
+      "Bash(cjob delete:*)",
+      "Bash(cjob reset:*)",
+      "Bash(pueue add:*)",
+      "Bash(pueue kill:*)",
+      "Bash(pueue clean:*)",
+      "Bash(scripts/setup_dvc.sh:*)",
+      "Bash(scripts/archive_data.sh:*)",
+      "Bash(scripts/restore_data.sh:*)"
+    ],
+    "deny": [
+      "Read(./.secrets/**)",
+      "Read(./.dvc/config.local)"
+    ]
+  }
+}

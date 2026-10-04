@@ -8,11 +8,10 @@ data/
   runs/<実験名>/<hash>/
     input.npz                 パラメータと記録用の値
     output.npz                計算結果（これがあれば完了）
-  tasks/<group>-<日時>-<id>.json   cjob に投入したコマンド一覧（sweep の _INDEX_ 番目を実行する）
+  tasks/<group>-<日時>-<id>.json   cjob に投入したタスク（コマンドのまとまり）の一覧
 ```
 
 キーの一覧は `docs/experiments-io.md`。外部データを置いたときは，入手元・日付・ライセンスを
 `inputs/` 内の README か `notes/` に書いておく。
 
-バックアップは `scripts/archive_data.sh`（`archive/data-<日付>/` に圧縮して DVC で Google Drive へ），
-復元は `scripts/restore_data.sh data-<日付>`。
+バックアップと復元は `docs/development.md`「データのアーカイブ」を参照。
