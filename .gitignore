@@ -1,0 +1,36 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# Test / tool outputs
+.coverage
+htmlcov/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# 実験データ・キャッシュ・作業用（README だけ残す）
+data/*
+!data/README.md
+cache/*
+!cache/.gitkeep
+tmp/*
+!tmp/.gitkeep
+
+# データのスナップショット（scripts/archive_data.sh が作る）
+archive/data-*/
+
+# 秘密情報（DVC の Google Drive 用の鍵など。scripts/setup_dvc.sh が置く）
+.secrets/
+
+# 論文 PDF（著作権のため共有しない。書誌情報は refs/references.bib で管理）
+refs/**/*.pdf
+
+.DS_Store

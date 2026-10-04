@@ -1,0 +1,2 @@
+# DVC が走査しないパス（.gitignore と同じ書式）
+# https://dvc.org/doc/user-guide/project-structure/dvcignore-files
